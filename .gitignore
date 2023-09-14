@@ -3,3 +3,5 @@
 /workspace.xml
 /target/
 /${project.testresult.directory}/
+/.idea/
+.DS_Store
