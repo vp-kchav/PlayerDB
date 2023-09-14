@@ -17,4 +17,8 @@ public interface PlayerRepository extends JpaRepository<Player, String> {
      */
     @Query(name = "SELECT p FROM PLAYERS p WHERE LOWER(p.birthCountry) = LOWER(:birthCountry)")
     public List<Player> findByBirthCountry(@Param("birthCountry") String birthCountry);
+
+
+    @Query(name = "SELECT p FROM PLAYERS p WHERE p.birthYear = LOWER(:birthYear)")
+    public List<Player> findByBirthYear(@Param("birthYear") String birthYear);
 }

@@ -53,4 +53,15 @@ public class PlayerServiceImpl implements PlayerService {
             return Optional.empty();
         }
     }
+
+    @Override
+    public Optional<Collection<Player>> getPlayersByBirthYear(String birthYear) {
+        try {
+            Collection<Player> players = playerRepository.findByBirthYear(birthYear);
+            return Optional.of(players);
+        } catch (Exception e) {
+            LOGGER.error("message=Exception in getPlayersByBirthCountry; exception={}", e.toString());
+            return Optional.empty();
+        }
+    }
 }

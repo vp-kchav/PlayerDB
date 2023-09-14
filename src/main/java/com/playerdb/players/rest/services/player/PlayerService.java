@@ -45,6 +45,8 @@ public interface PlayerService {
      */
      public Optional<Collection<Player>>  getPlayersByBirthCountry(String birthCountry);
 
+    Optional<Collection<Player>> getPlayersByBirthYear(String birthYear);
+
     /**
      * Create a new {@code Player} with auto-generated ID. The
      *      * date and time modeled as UTC milliseconds.

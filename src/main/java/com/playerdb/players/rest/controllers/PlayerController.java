@@ -58,4 +58,18 @@ public class PlayerController {
         }
     }
 
+    @GetMapping("/year/{birthYear}")
+    public ResponseEntity<Players> getPlayerByBirthYear(@PathVariable("birthYear") String birthYear) {
+        Optional<Collection<Player>> players = playerService.getPlayersByBirthYear(birthYear);
+
+        if (players.isPresent()) {
+            Players playersObj = new Players();
+            ArrayList<Player> newList = players.get().stream().collect(toCollection(ArrayList::new));
+            playersObj.setPlayers(newList);
+            return new ResponseEntity<>(playersObj , HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }
