@@ -38,3 +38,5 @@ In case you need to remote debug, and need to start the app from the command lin
 ```
 mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
 ```
+
+
